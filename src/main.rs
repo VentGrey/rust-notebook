@@ -109,3 +109,30 @@ fn measurements() {
 
     println!("You possess {:.2} hectares", acres * HECT_VAL);
 }
+
+fn bank_interest() {
+
+    let mut mount = String::new();
+    println!("Please input the amount of money you want to store");
+    io::stdin()
+        .read_line(&mut mount)
+        .expect("Failed to read from stdin");
+
+    let mount: f64 = match mount.trim().parse() {
+        Ok(num) => num,
+        Err(_) => panic!("Not a number!"),
+    };
+
+    let mut rate = String::new();
+    println!("Please input the interest rate");
+    io::stdin()
+        .read_line(&mut rate)
+        .expect("Failed to read from stdin");
+
+    let rate: f64 = match rate.trim().parse() {
+        Ok(num) => num,
+        Err(_) => panic!("Not a number!"),
+    };
+
+    println!("Total: {}", mount + (mount * rate));
+}
