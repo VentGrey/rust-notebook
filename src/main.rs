@@ -22,6 +22,7 @@ fn main() {
         2 => circle(),
         3 => exchange(),
         4 => measurements(),
+        5 => bank_interest(),
         _ => {
             println!("Option not available! Returning to main...");
             main();
